@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      // Redirect to the correct route by preserving the path
-      const currentPath = window.location.pathname;
+      // Preserve the current path and redirect to index.html
+      const pathname = window.location.pathname;
       const basePath = "/_myapp"; // Replace with your base path
-      const newUrl = basePath + "/index.html";
-      window.location.href =
-        newUrl + "?redirect=" + encodeURIComponent(currentPath);
+      const redirectUrl = basePath + "/index.html";
+      window.location.href = redirectUrl + "#" + pathname.replace(basePath, "");
     </script>
   </head>
   <body>
-    <h1>Redirecting to the correct page...</h1>
+    <h1>Redirecting...</h1>
   </body>
 </html>
